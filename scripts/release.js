@@ -21,7 +21,8 @@ const bin = name => path.resolve(__dirname, '../node_modules/.bin/' + name);
 const run = (bin, args, opts = {}) => execa(bin, args, { stdio: 'inherit', ...opts });
 const getPkgRoot = pkg => path.resolve(__dirname, '../packages/' + pkg);
 
-// console.log(packages);
+// console.log(args);
+
 // process.exit(0);
 
 async function main() {
@@ -86,7 +87,7 @@ async function main() {
   } else {
     // update changelog
     console.log('update changelog...');
-    await run('npm', ['run', 'changelog']);
+    await run('yarn', ['run', 'changelog']);
 
     // commit all changes
     console.log('Committing changes...');
@@ -95,7 +96,7 @@ async function main() {
 
     // publish packages
     const releaseTag = semver.prerelease(targetVersion)[0] || 'latest';
-    for (const pkg of packages) {
+    for (const pkg of packagesToPublish) {
       await publish(pkg, releaseTag);
     }
 
@@ -120,7 +121,7 @@ function updatePackage(pkgRoot, version) {
   pkg.version = version;
   if (pkg.dependencies) {
     Object.keys(pkg.dependencies).forEach(dep => {
-      if (dep.startsWith('@vue') && packages.includes(dep.replace(/^@vue\//, ''))) {
+      if (packages.includes(dep)) {
         pkg.dependencies[dep] = version;
       }
     });
@@ -137,7 +138,7 @@ async function publish(pkgName, releaseTag) {
   const pkgRoot = getPkgRoot(pkgName);
   const pkg = readPkg(pkgRoot);
   if (!pkg.private) {
-    await run('npm', ['publish', '--tag', releaseTag], {
+    await run('yarn', ['publish', '--tag', releaseTag], {
       cwd: pkgRoot
     });
   }
