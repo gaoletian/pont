@@ -1,5 +1,5 @@
 {
-  "name": "pont-engine",
+  "name": "@glt/pont-core",
   "version": "0.3.5",
   "description": "pont swagger typescript API",
   "main": "lib/index.js",
