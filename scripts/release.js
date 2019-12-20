@@ -96,7 +96,7 @@ async function main() {
 
     // publish packages
     const releaseTag = semver.prerelease(targetVersion)[0] || 'latest';
-    for (const pkg of packagesToPublish) {
+    for (const pkg of packages) {
       await publish(pkg, releaseTag);
     }
 
