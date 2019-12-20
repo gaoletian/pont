@@ -1,0 +1,56 @@
+{
+  "name": "vscode-pont",
+  "displayName": "pont",
+  "description": "",
+  "version": "0.3.5",
+  "publisher": "jasonHzq",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.24.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "jsonValidation": [
+      {
+        "fileMatch": "pont-config.json",
+        "url": "./configSchema.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pont.findInterface",
+        "title": "find pont interface"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "pont.findInterface",
+        "key": "cmd+ctrl+p",
+        "mac": "cmd+ctrl+p"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "rimraf ./out && tsc",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run build && node ../../node_modules/vscode/bin/test"
+  },
+  "dependencies": {
+    "pont-engine": "^0.3.5"
+  },
+  "devDependencies": {
+    "vsce": "^1.50.0",
+    "vscode": "^1.1.18"
+  },
+  "icon": "logo.png",
+  "repository": {
+    "url": "git@github.com:alibaba/pont.git",
+    "type": "git"
+  }
+}

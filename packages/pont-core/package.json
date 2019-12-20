@@ -1,0 +1,39 @@
+{
+  "name": "pont-engine",
+  "version": "0.3.5",
+  "description": "pont swagger typescript API",
+  "main": "lib/index.js",
+  "typings": "src/index.ts",
+  "bin": {
+    "pont": "bin/init.js"
+  },
+  "scripts": {
+    "pretest": "npm run build",
+    "dev": "tsc -w",
+    "build": "rm -rf lib && tsc"
+  },
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.19.0",
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.5",
+    "node-fetch": "^1.7.3",
+    "prettier": "^1.17.1",
+    "translation.js": "^0.7.5",
+    "typescript": "^3.5.3"
+  },
+  "files": [
+    "src",
+    "lib",
+    "*.md",
+    "bin"
+  ],
+  "keywords": [
+    "pont",
+    "swagger",
+    "typescript",
+    "API"
+  ],
+  "author": "jasonHzq",
+  "license": "MIT"
+}
