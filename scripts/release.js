@@ -21,8 +21,7 @@ const bin = name => path.resolve(__dirname, '../node_modules/.bin/' + name);
 const run = (bin, args, opts = {}) => execa(bin, args, { stdio: 'inherit', ...opts });
 const getPkgRoot = pkg => path.resolve(__dirname, '../packages/' + pkg);
 
-// console.log(args);
-
+// console.log(packages);
 // process.exit(0);
 
 async function main() {
@@ -96,7 +95,7 @@ async function main() {
 
     // publish packages
     const releaseTag = semver.prerelease(targetVersion)[0] || 'latest';
-    for (const pkg of packagesToPublish) {
+    for (const pkg of packages) {
       await publish(pkg, releaseTag);
     }
 

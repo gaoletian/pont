@@ -2,7 +2,7 @@
   "name": "pont-vscode-plugin",
   "displayName": "pont",
   "description": "",
-  "version": "0.3.6-alpha.0",
+  "version": "0.3.6-alpha.1",
   "publisher": "jasonHzq",
   "license": "MIT",
   "engines": {
