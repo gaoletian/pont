@@ -2,7 +2,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { Manager, Config, lookForFiles } from 'pont-engine';
+import { Manager, Config, lookForFiles } from 'pont-core';
 import * as path from 'path';
 import { Control } from './ui';
 import { syncNpm } from './utils';

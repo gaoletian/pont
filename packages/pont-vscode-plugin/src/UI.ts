@@ -1,4 +1,4 @@
-import { Manager } from 'pont-engine';
+import { Manager } from 'pont-core';
 import * as vscode from 'vscode';
 import * as _ from 'lodash';
 import * as path from 'path';

@@ -1,8 +1,8 @@
 {
-  "name": "@glt/pont-vscode-plugin",
+  "name": "pont-vscode-plugin",
   "displayName": "pont",
   "description": "",
-  "version": "0.3.5",
+  "version": "0.3.6-alpha.0",
   "publisher": "jasonHzq",
   "license": "MIT",
   "engines": {
@@ -42,7 +42,7 @@
     "test": "npm run build && node ../../node_modules/vscode/bin/test"
   },
   "dependencies": {
-    "@glt/pont-core": "^0.3.5"
+    "pont-core": "^0.3.5"
   },
   "devDependencies": {
     "vsce": "^1.50.0",
