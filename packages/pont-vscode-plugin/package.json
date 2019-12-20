@@ -2,7 +2,7 @@
   "name": "pont-vscode-plugin",
   "displayName": "pont",
   "description": "",
-  "version": "0.3.6-alpha.4",
+  "version": "0.3.6-alpha.5",
   "publisher": "jasonHzq",
   "license": "MIT",
   "engines": {
@@ -42,7 +42,7 @@
     "test": "npm run build && node ../../node_modules/vscode/bin/test"
   },
   "dependencies": {
-    "pont-core": "0.3.6-alpha.4"
+    "pont-core": "0.3.6-alpha.5"
   },
   "devDependencies": {
     "vsce": "^1.50.0",
